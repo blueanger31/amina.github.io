@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <title>Learning JQuery</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/javascript" src="jquery.min.js"></script>
+
+
+    <style>
+
+      * {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      .container {
+        text-align: center;
+      }
+
+      #heartPosition {
+        margin-top: 50px;
+        margin-bottom: 30px;
+      }
+
+      #heart {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        display: inline-block;
+        position: relative;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0; 
+        margin: auto;
+        transform: rotate(-45deg);
+      }
+
+      #heart::after {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        position: absolute;
+        top: 0;
+        left: 50px;
+        content: "";
+        border-radius: 50%;
+        
+      }
+
+      #heart::before {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        position: absolute;
+        top: -50px;
+        left: 0;
+        content: "";
+        border-radius: 50%;
+        
+      }
+
+
+
+      #heartWord {
+        position: absolute;
+        margin: 0;
+        top: 40.5px;
+        left: 31.117px;
+        z-index: 1;
+        transform: rotate(45deg);
+      }
+
+
+    </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+  <h1>Who Loves Me ?</h1>
+
+    <div id="heartPosition">
+      <div id="heart">
+        <p id="heartWord">Click</p>
+      </div>
+    </div>
+
+
+
+
+
+
+  <h2></h2>
+
+  <button>Reset</button>
+
+  </div>
+
+  <script type="text/javascript">
+
+    $("#heart").click(function(){
+      $("h2").html("Billy Loves Amina");
+    });
+
+    $("button").click(function(){
+      $("h2").html("");
+    });
+
+
+  </script>
+
+</body>
+</html>
